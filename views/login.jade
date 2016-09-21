@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+    meta(charset="UTF-8")
+    link(rel="stylesheet" href="style/bootstrap.min.css")
+    link(rel="stylesheet" href="style/login.css")
+    title Document
+body
+    form(action="/login" method="post")
+        .form-group
+            label 邮箱账号
+            input.mytxt.form-control(type='text', placeholder='Email' name="email")
+            span#myinfo
+        .form-group
+            label 密码
+            input.form-control(type='password', placeholder='Password' name="password")
+            p #{showinfo}
+        button.btn.btn-default(type='submit') 登陆
+    script(src="script/jquery.js")
+    script(src="script/login.js")

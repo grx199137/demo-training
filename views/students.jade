@@ -1,0 +1,54 @@
+extends layout
+
+block content
+    link(rel="stylesheet" href="style/bootstrap.min.css")
+    button.studentinsert.btn.btn-primary(type='button')
+        | 添加数据
+    button#mybtn.btn.btn-success(type='button')按成绩排序
+    button#myagebtn.btn.btn-success(type='button')按年龄排序
+    button#mymale.btn.btn-info(type='button')筛选(男)
+    button#myfemale.btn.btn-info(type='button')筛选(女)
+    #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+        .modal-dialog(role='document')
+            .modal-content
+                .modal-header
+                    button.close(type='button', data-dismiss='modal', aria-label='Close')
+                        span(aria-hidden='true') ×
+                    h4#myModalLabel.modal-title 学生资料
+                .modal-body
+                    form.myform
+                        .form-group
+                            label 学生编号
+                            input.number.form-control(type='text' name="number")
+                            p.mynumber
+                        .form-group
+                            label 学生姓名
+                            input.name.form-control(type='text' name="name")
+                            p.myname
+                        .form-group
+                            label 学生年龄
+                            input.age.form-control(type='text' name="age")
+                            p.myage
+                        .form-group
+                            label 学生成绩
+                            input.achievement.form-control(type='text' name="achievement")
+                            p.myachievement
+                        .form-group
+                            label 学生性别
+                            input.sex.form-control(type='text' name="sex")
+                            p.mysex
+                        button.btn.btn-default(type='submit') 添加/修改
+    table.table.table-bordered.table-hover
+        thead
+            th ID
+            th 学生编号
+            th 学生姓名
+            th 学生年龄
+            th 学习成绩
+            th 学生性别
+            th 删除
+            th 修改
+        tbody
+    script(src="script/jquery.js")
+    script(src="script/bootstrap.min.js")
+    script(src="script/students.js")

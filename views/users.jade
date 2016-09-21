@@ -1,0 +1,39 @@
+extends layout
+
+block content
+    link(rel="stylesheet" href="style/bootstrap.min.css")
+    button.userinsert.btn.btn-primary(type='button')
+        | 添加用户数据
+    #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+        .modal-dialog(role='document')
+            .modal-content
+                .modal-header
+                    button.close(type='button', data-dismiss='modal', aria-label='Close')
+                        span(aria-hidden='true') ×
+                    h4#myModalLabel.modal-title 添加用户资料
+                .modal-body
+                    form.myform
+                        .form-group
+                            label 邮箱账号
+                            input.email.form-control(type='text' name="email")
+                            p.myemail
+                        .form-group
+                            label 用户名
+                            input.username.form-control(type='text' name="username")
+                            p.myusername
+                        .form-group
+                            label 密码
+                            input.password.form-control(type='text' name="password")
+                            p.mypassword
+                        button.btn.btn-default(type='submit') 添加
+    table.table.table-bordered.table-hover
+        thead
+            th ID
+            th 用户邮箱
+            th 用户名
+            th 用户密码
+            th 删除
+        tbody
+    script(src="script/jquery.js")
+    script(src="script/bootstrap.min.js")
+    script(src="script/users.js")
